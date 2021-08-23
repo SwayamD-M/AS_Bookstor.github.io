@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="text/ stylesheet" href="style3.css">
+    <link rel="text/ stylesheet" href="style1.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1c1c25;
+            font-size: 'consolas';
+        }
+        .a{
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            color: #2196f3;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-decoration: none;
+            font-size: 24px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+        .a:hover{
+            color: #255784;
+            background: #2196f3;
+            box-shadow: 0 0 10px #2196f3,  0 0 40px #2196f3,  0 0 80px #2196f3;
+            transition-delay: 1s;
+        }
+        .a span{
+            position: absolute;
+            display: block;
+        }
+        .a span:nth-child(1){
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2196f3);
+        }
+        .a:hover span:nth-child(1){
+            left: 100%;
+            transition: 1s;
+        }
+
+
+        .a span:nth-child(3){
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #2196f3);
+        }
+        .a:hover span:nth-child(3){
+            right: 100%;
+            transition: 1s;
+            transition-delay: 0.5s;
+        }
+
+
+        .a span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #2196f3);
+        }
+        .a:hover span:nth-child(2){
+            top: 100%;
+            transition: 1s;
+        }
+
+
+        .a span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #2196f3);
+        }
+        .a:hover span:nth-child(4){
+            bottom: 100%;
+            transition: 1s;
+            transition-delay: 0.75s;
+        }
+    </style>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script>
+        function email(){
+            var email=document.getElementById("email").value
+            document.getElementById("emailp").innerHTML=(""+email)
+        }
+        function password(){
+            var password=document.getElementById("password").value
+            document.getElementById("passwordp").innerHTML=(""+password)
+        }
+        
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+                apiKey: "AIzaSyBHQVNUJNR78EQsk8vN0X6hkMemMmNWajE",
+                authDomain: "absolute-singularity.firebaseapp.com",
+                projectId: "absolute-singularity",
+                storageBucket: "absolute-singularity.appspot.com",
+                messagingSenderId: "1085708481104",
+                appId: "1:1085708481104:web:50b4e90e4c9c6a09f45755",
+                measurementId: "G-BZCJKWT42C"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth =  firebase.auth();
+
+        //signup function
+        function signUp(){
+            var email = document.getElementById("email");
+            var password = document.getElementById("password");
+
+            const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
+            //
+            promise.catch(e=>alert(e.message));
+            alert("SignUp Successfully");
+        }
+
+        //signIN function
+        function  signIn(){
+            var email = document.getElementById("email");
+            var password  = document.getElementById("password");
+            const promise = auth.signInWithEmailAndPassword(email.value,password.value);
+            promise.catch(e=>alert(e.message));
+            
+        }
+
+
+        //signOut
+
+        function signOut(){
+            auth.signOut();
+            alert("Signed out Successfully from System");
+        }
+
+        //active user to homepage
+        firebase.auth().onAuthStateChanged((user)=>{
+            if(user){
+            var email = user.email;
+            alert("Active user "+email);
+
+            }else{
+            alert("No Active user Found")
+            }
+        })
+    </script>
+    <title>Login System</title>
+</head>
+<body>
+    <div class="formContainer">
+    <h1 style="color: white;">Enter Credentials Here:</h1>
+
+    <section>
+        <div class="card" style="align-self: center; justify-self: center;">
+            <div class="face front">
+                <h3 class="debit">Registeration Card</h3>
+                <h3 class="bank">ABSOLUTE S.</h3>
+                <img src="chip.png" class="chip">
+                <h3 class="number">0123 4567 8901 2345</h3>
+                <h5 class="valid"><span>Valid<br>thru</span><span>for ever</span></h5>
+                <p class="cardHolder" id="emailp"></h5>
+            </div>
+            <div class="face back">
+                <div class="blackbar"></div>
+                <div class="ccvtext">
+                    <h5>Your Password: </h5>
+                    <div class="whiteBar"><p id="passwordp" style="color: black;"></p></div>
+                    <div class="ccv">123</div>
+                </div>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cilium dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mol lit anim id est laborum. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+  
+    <div class="maincontainer">
+        <div class="registraion_left">
+            <div class="a" style="position: absolute; right: 7.5%; bottom: 20%;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="text" id="email" style="background: transparent; border-bottom: 1px solid; color: white; border-top: none; border-right: none; border-left: none; border-top: none;">
+                <button style="background: rgba(0, 0, 0, 0.5); color: white; border-top: none; border-right: none; border-left: none; border-top: none; border-bottom: none;" onclick="email()">Register E-mail account</button>
+            </div>
+            <div class="a" style="position: absolute; right: 7.5%; bottom: 10%;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="password" id="password" style="background: transparent; border-bottom: 1px solid; color: white; border-top: none; border-right: none; border-left: none; border-top: none;">
+                <button style="background: rgba(0, 0, 0, 0.5); color: white; border-top: none; border-right: none; border-left: none; border-top: none; border-bottom: none;" onclick="password()">Register your Password</button>
+            </div>
+        </div>
+        <div class="registration">
+            <div class="a" style="position: absolute; right: 37.5%; bottom: 15%;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button style="background: transparent; color: white; border-top: none; border-right: none; border-left: none; border-top: none; border-bottom: none;" onclick="signUp()">Register</button>
+            </div>
+        </div>
+        <div class="registration">
+            <div class="a" style="position: absolute; right: 70%; bottom: 15%;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button onclick="signOut()" id="signOut" style="background: transparent; color: white; border-top: none; border-right: none; border-left: none; border-top: none; border-bottom: none;" onclick="signUp()">Sign out from all active accounts</button>
+            </div>
+        </div>
+    </div>
+    <button onclick="signUp()" id="signUp">SignUp</button>
+    <button onclick="signIn()" id="signIp">SignIn</button>
+    <button onclick="signOut()" id="signOut" style="bottom: 10px; color: white;">SignOut</button>
+</div>
+
+
+    
+</body>
+</html>

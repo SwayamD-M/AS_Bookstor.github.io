@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+        <title>CRACK</title>
+        <link rel="stylesheet" href="style.css">
+        <style> 
+            @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+            body{background-image: url(bookshelf.jpg); background-size: cover; background-repeat: no-repeat; min-height: 100vh; min-width: 100vw; opacity: 80%;}
+        </style>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+                // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBHQVNUJNR78EQsk8vN0X6hkMemMmNWajE",
+                authDomain: "absolute-singularity.firebaseapp.com",
+                projectId: "absolute-singularity",
+                storageBucket: "absolute-singularity.appspot.com",
+                messagingSenderId: "1085708481104",
+                appId: "1:1085708481104:web:50b4e90e4c9c6a09f45755",
+                measurementId: "G-BZCJKWT42C"
+            };
+            firebase.initializeApp(config);
+
+
+            function login(){
+
+                var userEmail = document.getElementById("email_field").value;
+                var userPass = document.getElementById("password_field").value;
+
+                firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                window.alert("Error : " + errorMessage);
+
+                // ...
+                });
+
+            }
+
+            function logout(){
+                auth.signOut();
+                
+            }
+
+            firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+
+                document.getElementById("user_div").style.display = "block";
+                document.getElementById("login_div").style.display = "none";
+
+                var user = firebase.auth().currentUser;
+
+                if(user != null){
+
+                var email_id = user.email;
+                document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+                }
+
+            }
+
+            else {
+                // No user is signed in.
+
+                document.getElementById("user_div").style.display = "none";
+                document.getElementById("login_div").style.display = "block";
+
+            }
+            });
+        </script>
+    </head>
+    <body id="body">
+        <div class="main">
+
+            <div class="navbar">
+                <div class="icons">
+                    <h2 class="logo"><img src="effect.png" style="height: 25vh;"></h2>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">HOME</li>
+                        <li><a href="parallax1.html">ABOUT</li>
+                        <li><a href="Physics Bookstore.html" style="width: fit-content">PHYSICS INFLUX</a></li>
+                        <li><a href="Chemistry Bookstore.html" style="width: fit-content">CHEMISTRY BUZZ</a></li>
+                        <li><a href="Maths Bookstore.html" style="width: fit-content">MATHS TERRARIUM</a></li>
+                        <li><a href="Trending.html" style="width: fit-content">TOP PICKS</a></li>
+                        <li><a href="Fairs.html" style="width: fit-content">Upcoming Fairs</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="content" style="color: white;">
+                <h1 style="color: white; font-family: 'Times New Roman'; text-decoration: none;">ABSOLUTE Singularity,<br><span style="font-family: Allison; font-size: 90px;">Your reading buddy!</span></h1><br>
+                <p class="par" style="color: white; font-family: Allison; font-size: 40px;">It is well said, 'If you ever meet a wise man, ask him the books he has read'<br>
+                    Quench the thirst of a scientific mind, the buck stops at this juncture.
+                </p>
+
+                <div class="form">
+                    <div id="login_div">
+                        <h2 class="login" style="align-self: center; opacity: initial;">Login Here</h2>
+                        <input type="email" placeholder="Email..." id="email_field" />
+                        <input type="password" placeholder="Password..." id="password_field"/>                    
+                        <button class="btnn" onclick="login()">Login</button>
+                        <p class="link">Don't have an account,<br>
+                        <a href="sign up.htm">Sign up</a> here</p>
+                    </div>
+                    <div id="user_div">                        
+                        <div id="user_div">
+                            <h3>Welcome User</h3>
+                            <p class="link">What are you waiting for<br>
+                                grab your books <a href="Physics Bookstore.html">here</a>
+                            </p>
+                            <button onclick="logout()" class="btnn">Logout</button>
+                        </div>
+                        
+                        
+                        
+                        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+                          <script>
+                            // Initialize Firebase
+                            var config = {
+                                apiKey: "AIzaSyBHQVNUJNR78EQsk8vN0X6hkMemMmNWajE",
+                                authDomain: "absolute-singularity.firebaseapp.com",
+                                projectId: "absolute-singularity",
+                                storageBucket: "absolute-singularity.appspot.com",
+                                messagingSenderId: "1085708481104",
+                                appId: "1:1085708481104:web:50b4e90e4c9c6a09f45755",
+                                measurementId: "G-BZCJKWT42C"
+                            };
+                            firebase.initializeApp(config);
+                          </script>
+                          <script src="index.js"></script>
+                        
+                </div>
+            </div>
+            
+        </div>
+        <script>
+            
+            (function(doc){
+                var scriptElm = doc.scripts[doc.scripts.length - 1];
+                var warn = ['[ionicons] Deprecated script, please remove: ' + scriptElm.outerHTML];
+            
+                warn.push('To improve performance it is recommended to set the differential scripts in the head as follows:')
+            
+                var parts = scriptElm.src.split('/');
+                parts.pop();
+                parts.push('ionicons');
+                var url = parts.join('/');
+            
+                var scriptElm = doc.createElement('script');
+                scriptElm.setAttribute('type', 'module');
+                scriptElm.src = url + '/ionicons.esm.js';
+                warn.push(scriptElm.outerHTML);
+                scriptElm.setAttribute('data-stencil-namespace', 'ionicons');
+                doc.head.appendChild(scriptElm);
+            
+                
+                scriptElm = doc.createElement('script');
+                scriptElm.setAttribute('nomodule', '');
+                scriptElm.src = url + '/ionicons.js';
+                warn.push(scriptElm.outerHTML);
+                scriptElm.setAttribute('data-stencil-namespace', 'ionicons');
+                doc.head.appendChild(scriptElm)
+                
+                console.warn(warn.join('\n'));
+          
+            })
+            (document);
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Description</title>
+  <style>
+    /* Basic Styling */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #161623;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      display: flex;
+    }
+
+    /* Columns */
+    .left-column {
+      width: 65%;
+      position: relative;
+    }
+
+    .right-column {
+      width: 35%;
+      margin-top: 60px;
+    }
+
+
+    /* Left Column */
+    .left-column img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .left-column img.active {
+      opacity: 1;
+    }
+
+
+    /* Right Column */
+
+    /* Product Description */
+    .book-description {
+      border-bottom: 1px solid #000000;
+      margin-bottom: 20px;
+    }
+    .book-description span {
+      font-size: 12px;
+      color: #358ED7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .book-description h1 {
+      font-weight: 300;
+      font-size: 52px;
+      color: #fff;
+      letter-spacing: -2px;
+    }
+    .book-description p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #86939E;
+      line-height: 24px;
+    }
+
+    .bookoptions span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #86939E;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Product Color */
+    .product-color {
+      margin-bottom: 30px;
+    }
+
+    .color-choose div {
+      display: inline-block;
+    }
+
+    .color-choose input[type="radio"] {
+      display: none;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+    }
+
+    .color-choose input[type="radio"]#red + label span {
+      background-color: #C91524;
+    }
+    .color-choose input[type="radio"]#blue + label span {
+      background-color: #314780;
+    }
+    .color-choose input[type="radio"]#black + label span {
+      background-color: #323232;
+    }
+
+    .color-choose input[type="radio"]:checked + label span {
+      background-image: url(images/check-icn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Cable Configuration */
+    .choose-options {
+      margin-bottom: 20px;
+    }
+
+    .choose-options button {
+      border: 2px solid #E1E8EE;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 14px;
+      color: #5E6977;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all .5s;
+    }
+
+    .choose-options button:hover,
+    .choose-options button:active,
+    .choose-options button:focus {
+      border: 2px solid #86939E;
+      outline: none;
+    }
+
+    .bookoptions {
+      border-bottom: 1px solid #E1E8EE;
+      margin-bottom: 20px;
+    }
+
+    .bookoptions a {
+      color: #358ED7;
+      text-decoration: none;
+      font-size: 12px;
+      position: relative;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .bookoptions a:before {
+      content: "?";
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 2px solid rgba(53, 142, 215, 0.5);
+      display: inline-block;
+      text-align: center;
+      line-height: 16px;
+      opacity: 0.5;
+      margin-right: 5px;
+    }
+
+    /* Product Price */
+    .product-price {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-price span {
+      font-size: 26px;
+      font-weight: 300;
+      color: #43474D;
+      margin-right: 20px;
+    }
+
+    .cart-btn {
+      display: inline-block;
+      background-color: #7DC855;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 30px;
+      transition: all .5s;
+    }
+    .cart-btn:hover {
+      background-color: #64af3d;
+    }
+
+    /* Responsive */
+    @media (max-width: 940px) {
+      .container {
+        flex-direction: column;
+        margin-top: 60px;
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+      }
+
+      .left-column img {
+        width: 300px;
+        right: 0;
+        top: -65px;
+        left: initial;
+      }
+    }
+
+    @media (max-width: 535px) {
+      .left-column img {
+        width: 220px;
+        top: -85px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <main class="container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column" style="padding-left: 20px;">
+      <img data-image="red" class="active" src="https://m.media-amazon.com/images/I/51Q0+DRzYUL.jpg" height="auto" alt="">
+    </div>
+   
+    <div class="right-column">
+
+      <div class="book-description" style="padding-left: 20px;">
+        <span>Book</span>
+        <h1>Infinite Powers by Steven Strogatz</h1>
+        <p id="bookd">NEW YORK TIMES BESTSELLER
+          "Marvelous . . . an array of witty and astonishing stories . . . to illuminate how calculus has helped bring into being our contemporary world."--The Washington Post
+          From preeminent math personality and author of The Joy of x, a brilliant and endlessly appealing explanation of calculus - how it works and why it makes our lives immeasurably better.
+          
+          Without calculus, we wouldn't have cell phones, TV, GPS, or ultrasound. We wouldn't have unraveled DNA or discovered Neptune or figured out how to put 5,000 songs in your pocket.
+          
+          Though many of us were scared away from this essential, engrossing subject in high school and college, Steven Strogatz's brilliantly creative, down-to-earth history shows that calculus is not about complexity; it's about simplicity. It harnesses an unreal number--infinity--to tackle real-world problems, breaking them down into easier ones and then reassembling the answers into solutions that feel miraculous.
+          
+          Infinite Powers recounts how calculus tantalized and thrilled its inventors, starting with its first glimmers in ancient Greece and bringing us right up to the discovery of gravitational waves (a phenomenon predicted by calculus). Strogatz reveals how this form of math rose to the challenges of each age: how to determine the area of a circle with only sand and a stick; how to explain why Mars goes "backwards" sometimes; how to make electricity with magnets; how to ensure your rocket doesn't miss the moon; how to turn the tide in the fight against AIDS.
+          
+          As Strogatz proves, calculus is truly the language of the universe. By unveiling the principles of that language, Infinite Powers makes us marvel at the world anew.
+          
+          Source: Publisher</p>
+      </div>
+      <div class="book-description" style="padding-left: 20px;">
+        <p id="ISBN"  style="display: none; padding-left: 20px;">
+          ISBN: 9781328879981, 1328879984<br>
+          Page count: 360<br>
+          Published: 2 April 2019<br>
+          Format: Hardcover<br>
+          Publisher: Houghton Mifflin Harcourt<br>
+          Language: English<br>
+          Author: Steven Henry Strogatz</p>
+      </div>
+      <div class="product-configuration">
+   
+        <div class="bookoptions">
+   
+          <div class="choose-options" >
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="ISBN()">ISBN Details</button></a>
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="Normal()">View Description</button></a>
+          </div>
+          <script>
+            function ISBN(){
+              document.getElementById("bookd").style.display="none";
+              document.getElementById("ISBN").style.display="block";
+            }
+            function Normal(){
+              document.getElementById("bookd").style.display="block";
+              document.getElementById("ISBN").style.display="none";
+            }
+          </script>
+        </div>
+      </div>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span style="color: white;"><u>100</u> INR</span>
+        <a href="Lorem ipsum dolor sit amet....pdf" download="Lorem ipsum dolor sit amet....pdf" class="cart-btn">Download Preview</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

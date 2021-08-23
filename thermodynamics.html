@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Description</title>
+  <style>
+    /* Basic Styling */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #161623;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      display: flex;
+    }
+
+    /* Columns */
+    .left-column {
+      width: 65%;
+      position: relative;
+    }
+
+    .right-column {
+      width: 35%;
+      margin-top: 60px;
+    }
+
+
+    /* Left Column */
+    .left-column img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .left-column img.active {
+      opacity: 1;
+    }
+
+
+    /* Right Column */
+
+    /* Product Description */
+    .book-description {
+      border-bottom: 1px solid #000000;
+      margin-bottom: 20px;
+    }
+    .book-description span {
+      font-size: 12px;
+      color: #358ED7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .book-description h1 {
+      font-weight: 300;
+      font-size: 52px;
+      color: #fff;
+      letter-spacing: -2px;
+    }
+    .book-description p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #86939E;
+      line-height: 24px;
+    }
+
+    .bookoptions span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #86939E;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Product Color */
+    .product-color {
+      margin-bottom: 30px;
+    }
+
+    .color-choose div {
+      display: inline-block;
+    }
+
+    .color-choose input[type="radio"] {
+      display: none;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+    }
+
+    .color-choose input[type="radio"]#red + label span {
+      background-color: #C91524;
+    }
+    .color-choose input[type="radio"]#blue + label span {
+      background-color: #314780;
+    }
+    .color-choose input[type="radio"]#black + label span {
+      background-color: #323232;
+    }
+
+    .color-choose input[type="radio"]:checked + label span {
+      background-image: url(images/check-icn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Cable Configuration */
+    .choose-options {
+      margin-bottom: 20px;
+    }
+
+    .choose-options button {
+      border: 2px solid #E1E8EE;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 14px;
+      color: #5E6977;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all .5s;
+    }
+
+    .choose-options button:hover,
+    .choose-options button:active,
+    .choose-options button:focus {
+      border: 2px solid #86939E;
+      outline: none;
+    }
+
+    .bookoptions {
+      border-bottom: 1px solid #E1E8EE;
+      margin-bottom: 20px;
+    }
+
+    .bookoptions a {
+      color: #358ED7;
+      text-decoration: none;
+      font-size: 12px;
+      position: relative;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .bookoptions a:before {
+      content: "?";
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 2px solid rgba(53, 142, 215, 0.5);
+      display: inline-block;
+      text-align: center;
+      line-height: 16px;
+      opacity: 0.5;
+      margin-right: 5px;
+    }
+
+    /* Product Price */
+    .product-price {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-price span {
+      font-size: 26px;
+      font-weight: 300;
+      color: #43474D;
+      margin-right: 20px;
+    }
+
+    .cart-btn {
+      display: inline-block;
+      background-color: #7DC855;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 30px;
+      transition: all .5s;
+    }
+    .cart-btn:hover {
+      background-color: #64af3d;
+    }
+
+    /* Responsive */
+    @media (max-width: 940px) {
+      .container {
+        flex-direction: column;
+        margin-top: 60px;
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+      }
+
+      .left-column img {
+        width: 300px;
+        right: 0;
+        top: -65px;
+        left: initial;
+      }
+    }
+
+    @media (max-width: 535px) {
+      .left-column img {
+        width: 220px;
+        top: -85px;
+      }
+    }
+    @media(max-width: 940px){
+        .container{
+            display: flex;
+            
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <main class="container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column"  style="padding-left: 20px;">
+      <img data-image="red" class="active" src="https://images-na.ssl-images-amazon.com/images/I/41x145ZCjZL._SX364_BO1,204,203,200_.jpg" height="auto" alt="">
+    </div>
+   
+    <div class="right-column" style="padding-left: 20px;">
+
+      <div class="book-description">
+        <span>Book</span>
+        <h1>Thermodynamics by Enrico Fermi</h1>
+        <p id="bookd">Enrico Fermi (1901–1954) was an Italian-American physicist particularly known for his work on the development of the first nuclear reactor and for his contributions to the development of quantum theory, nuclear and particle physics, and statistical mechanics. He was awarded the 1938 Nobel Prize in Physics for his work on induced radioactivity. Fermi is widely regarded as one of the leading scientists of the 20th century, highly accomplished in both theory and experiment. Along with J. Robert Oppenheimer, he is frequently referred to as "the father of the atomic bomb.
+            " His lecture notes, especially those for quantum mechanics, nuclear physics, and thermodynamics, were transcribed into books which are still in print, including this book in particular THERMODYNAMICS, which remains his most important publication. With his characteristic clarity, in this classic on Thermodynamics, Fermi explains the First and Second Laws of Thermodynamics, entropy, thermodynamic potentials, and much more.
+        </p>
+      </div>
+      <div class="book-description">
+        <p id="ISBN" style="display: none;">
+          ISBN: N.A.<br>
+          Page count: 160<br>
+          Published: January 1, 1976<br>
+          Format: Hardcover<br>
+          Publisher: Prentice-Hall, inc<br>
+          Language: English<br>
+          Author: Enrico Fermi</p>
+      </div>
+      <div class="product-configuration">
+   
+        <div class="bookoptions">
+   
+          <div class="choose-options">
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="ISBN()">ISBN Details</button></a>
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="Normal()">View Description</button></a>
+          </div>
+          <script>
+            function ISBN(){
+              document.getElementById("bookd").style.display="none";
+              document.getElementById("ISBN").style.display="block";
+            }
+            function Normal(){
+              document.getElementById("bookd").style.display="block";
+              document.getElementById("ISBN").style.display="none";
+            }
+          </script>
+        </div>
+      </div>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span style="color: white;"><u>100</u> INR</span>
+        <a href="Lorem ipsum dolor sit amet....pdf" download="Lorem ipsum dolor sit amet....pdf" class="cart-btn">Download Preview</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Description</title>
+  <style>
+    /* Basic Styling */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #161623;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      display: flex;
+    }
+
+    /* Columns */
+    .left-column {
+      width: 65%;
+      position: relative;
+    }
+
+    .right-column {
+      width: 35%;
+      margin-top: 60px;
+    }
+
+
+    /* Left Column */
+    .left-column img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .left-column img.active {
+      opacity: 1;
+    }
+
+
+    /* Right Column */
+
+    /* Product Description */
+    .book-description {
+      border-bottom: 1px solid #000000;
+      margin-bottom: 20px;
+    }
+    .book-description span {
+      font-size: 12px;
+      color: #358ED7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .book-description h1 {
+      font-weight: 300;
+      font-size: 52px;
+      color: #fff;
+      letter-spacing: -2px;
+    }
+    .book-description p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #86939E;
+      line-height: 24px;
+    }
+
+    .bookoptions span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #86939E;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Product Color */
+    .product-color {
+      margin-bottom: 30px;
+    }
+
+    .color-choose div {
+      display: inline-block;
+    }
+
+    .color-choose input[type="radio"] {
+      display: none;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .color-choose input[type="radio"] + label span {
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+    }
+
+    .color-choose input[type="radio"]#red + label span {
+      background-color: #C91524;
+    }
+    .color-choose input[type="radio"]#blue + label span {
+      background-color: #314780;
+    }
+    .color-choose input[type="radio"]#black + label span {
+      background-color: #323232;
+    }
+
+    .color-choose input[type="radio"]:checked + label span {
+      background-image: url(images/check-icn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Cable Configuration */
+    .choose-options {
+      margin-bottom: 20px;
+    }
+
+    .choose-options button {
+      border: 2px solid #E1E8EE;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 14px;
+      color: #5E6977;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all .5s;
+    }
+
+    .choose-options button:hover,
+    .choose-options button:active,
+    .choose-options button:focus {
+      border: 2px solid #86939E;
+      outline: none;
+    }
+
+    .bookoptions {
+      border-bottom: 1px solid #E1E8EE;
+      margin-bottom: 20px;
+    }
+
+    .bookoptions a {
+      color: #358ED7;
+      text-decoration: none;
+      font-size: 12px;
+      position: relative;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .bookoptions a:before {
+      content: "?";
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 2px solid rgba(53, 142, 215, 0.5);
+      display: inline-block;
+      text-align: center;
+      line-height: 16px;
+      opacity: 0.5;
+      margin-right: 5px;
+    }
+
+    /* Product Price */
+    .product-price {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-price span {
+      font-size: 26px;
+      font-weight: 300;
+      color: #43474D;
+      margin-right: 20px;
+    }
+
+    .cart-btn {
+      display: inline-block;
+      background-color: #7DC855;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 30px;
+      transition: all .5s;
+    }
+    .cart-btn:hover {
+      background-color: #64af3d;
+    }
+
+    /* Responsive */
+    @media (max-width: 940px) {
+      .container {
+        flex-direction: column;
+        margin-top: 60px;
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+      }
+
+      .left-column img {
+        width: 300px;
+        right: 0;
+        top: -65px;
+        left: initial;
+      }
+    }
+
+    @media (max-width: 535px) {
+      .left-column img {
+        width: 220px;
+        top: -85px;
+      }
+    }
+    @media(max-width: 940px){
+        .container{
+            display: flex;
+            
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <main class="container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column"  style="padding-left: 20px;">
+      <img data-image="red" class="active" src="https://m.media-amazon.com/images/I/41GZWmF7FBL.jpg" height="auto" alt="">
+    </div>
+   
+    <div class="right-column">
+
+      <div class="book-description" style="padding-left: 20px;">
+        <span>Book</span>
+        <h1>Humble Pi by Matt Parker</h1>
+        <p id="bookd">#1 INTERNATIONAL BESTSELLER-AN ADAM SAVAGE BOOK CLUB PICKThe book-length answer to anyone who ever put their hand up in math class and asked, “When am I ever going to use this in the real world?” “Fun, informative, and relentlessly entertaining, Humble Pi is a charming and very readable guide to some of humanity's all-time greatest miscalculations—that also gives you permission to feel a little better about some of your own mistakes.” —Ryan North, author of How to Invent Everything  Our whole world is built on math, from the code running a website to the equations enabling the design of skyscrapers and bridges.
+            Most of the time this math works quietly behind the scenes . . . until it doesn’t. All sorts of seemingly innocuous mathematical mistakes can have significant consequences. Math is easy to ignore until a misplaced decimal point upends the stock market, a unit conversion error causes a plane to crash, or someone divides by zero and stalls a battleship in the middle of the ocean. Exploring and explaining a litany of glitches, near misses, and mathematical mishaps involving the internet, big data, elections, street signs, lotteries, the Roman Empire, and an Olympic team, Matt Parker uncovers the bizarre ways math trips us up, and what this reveals about its essential place in our world. Getting it wrong has never been more fun. Math is easy to ignore until a misplaced decimal point upends the stock market, a unit conversion error causes a plane to crash, or someone divides by zero and stalls a battleship in the middle of the ocean. Exploring and explaining a litany of glitches, near misses, and mathematical mishaps involving the internet, big data, elections, street signs, lotteries, the Roman Empire, and an Olympic team, Matt Parker uncovers the bizarre ways math trips us up, and what this reveals about its essential place in our world. Getting it wrong has never been more fun.
+        </p>
+      </div>
+      <div class="book-description">
+        <p id="ISBN"  style="display: none;">
+          ISBN: 0593084683, 978-0593084687<br>
+          Page count: 336<br>
+          Published: January 21, 2020<br>
+          Format: Hardcover<br>
+          Publisher: Houghton Mifflin Harcourt<br>
+          Language: English<br>
+          Author: Matt Parker</p>
+      </div>
+      <div class="product-configuration">
+   
+        <div class="bookoptions">
+   
+          <div class="choose-options">
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="ISBN()">ISBN Details</button></a>
+            <a style="border: 2px solid #E1E8EE; border-radius: 6px; padding: 13px 20px; font-size: 14px; color: #5E6977; background-color: #fff; cursor: pointer; transition: all .5s;"><button style="border: none; background: transparent;" onclick="Normal()">View Description</button></a>
+          </div>
+          <script>
+            function ISBN(){
+              document.getElementById("bookd").style.display="none";
+              document.getElementById("ISBN").style.display="block";
+            }
+            function Normal(){
+              document.getElementById("bookd").style.display="block";
+              document.getElementById("ISBN").style.display="none";
+            }
+          </script>
+        </div>
+      </div>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span style="color: white;"><u>100</u> INR</span>
+        <a href="Lorem ipsum dolor sit amet....pdf" download="Lorem ipsum dolor sit amet....pdf" class="cart-btn">Download Preview</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

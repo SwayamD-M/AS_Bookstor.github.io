@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Physics Books</title>
+        <link rel="icon" href="output-onlinepngtools.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style2.css">
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+
+            function Donate() {
+
+                alert("You will be redirected to the donation website on pasting the link below in a new tab-                                                                                                                  www.safetyschool.org");
+
+            }
+
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+                dropdown[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    if (dropdownContent.style.display === "block") {
+                        dropdownContent.style.display = "none";
+                    } else {
+                        dropdownContent.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body id="body">
+        <div class="header">BEST SELLERS</div>
+        <section>            
+            <div class="container" id="main">
+               <div>
+                   <h1 style="color: white; font-size: 2rem;">TRENDING   :</h1><br><br>
+                    <div class="imgBx"><img src="trending.gif" style="width:9vvw; height: 15vh;"></div>
+               </div>
+                <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                    <div class="content">
+                        <div class="imgBx" style="align-self: left;"><img src="https://m.media-amazon.com/images/I/51BhjkwVT+L.jpg"></div>
+                        <div class="contentBx">
+                            <h3>LOST IN MATH<br><span>Sabine Hossenfelder</span></h3>
+                        </div>  
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <button style="border: none; color: white; background: transparent;"><a href="lost im math.html">DESCRIPTION</a></button>
+                        </li>
+                    </ul>
+                </div><br><br>
+                <div>
+                    <h1 style="color: #161623; font-size: 2rem;">TRENDING   :</h1><br><br>
+                    <div class="imgBx"><img src="" style="width:9vvw; height: 15vh;"></div>
+                </div>
+                 <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                     <div class="content">
+                         <div class="imgBx" style="align-self: left;"><img src="https://images-na.ssl-images-amazon.com/images/I/41mw9YK7raL.jpg"></div>
+                         <div class="contentBx">
+                             <h3>Hacking the Atom<br><span>Cynthia Goldstein</span></h3>
+                         </div>  
+                     </div>
+                     <ul class="sci">
+                         <li style="--i:1">
+                             <button style="border: none; color: white; background: transparent;"><a href="hacking the atom.html">DESCRIPTION</a></button>
+                         </li>
+                     </ul>
+                 </div>                 
+        </section>
+        <section>
+            
+            <div class="container" id="main">
+               <div>
+                   <h1 style="color: #fff; font-size: 2rem;">Best-selling<br>Authors   :</h1><br><br>
+                    <div class="imgBx"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIaJT4za9X6ghz9CV9UwaAH9Y7nIvy5hBvubaOUtdh6tcdGVa3EOq3CThjxKz4zBkFZNU&usqp=CAU" style="width:9vvw; height: 15vh;"></div>
+               </div>
+                <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                    <div class="content">
+                        <div class="imgBx" style="align-self: left;"><img src="https://images.squarespace-cdn.com/content/v1/5436e695e4b07f1e91b30155/1549398633231-2X9Y41HB1736PAHZPU0K/steve.JPG"></div>
+                        <div class="contentBx">
+                            <h3>STEVEN STROGATZ<br><span>Author of Infinite Powers</span></h3>
+                        </div>  
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <button style="border: none; color: white; background: transparent;"><a href="infinite powers.html">DESCRIPTION</a></button>
+                        </li>
+                    </ul>
+                </div><br><br>
+                <div>
+                    <h1 style="color: #161623; font-size: 2rem;">TRENDING   :</h1><br><br>
+                    <div class="imgBx"><img src="" style="width:9vvw; height: 15vh;"></div>
+                </div>
+                 <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                     <div class="content">
+                         <div class="imgBx" style="align-self: left;"><img src="https://www.nobelprize.org/images/fermi-13018-content-portrait-mobile-tiny.jpg"></div>
+                         <div class="contentBx">
+                             <h3>ERICO FERMI<br><span>Author of Thermodynamics</span></h3>
+                         </div>  
+                     </div>
+                     <ul class="sci">
+                         <li style="--i:1">
+                             <button style="border: none; color: white; background: transparent;"><a href="thermodynamics.html">DESCRIPTION</a></button>
+                         </li>
+                     </ul>
+                 </div>                 
+        </section>
+        
+        <section style="float: right; padding-left: 35.25%;">            
+            <div class="container" id="main">
+               <div>
+                   <h1 style="color: white; font-size: 2rem;">Book of<br>the Month   :</h1><br><br>
+                    <div class="imgBx"><img src="https://i.giphy.com/media/l1J9O2yEuK4y9Dcfm/giphy.webp" style="width:9vvw; height: 15vh;"></div>
+               </div>
+                <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                    <div class="content">
+                        <div class="imgBx" style="align-self: left;"><img src="https://m.media-amazon.com/images/I/51Q0+DRzYUL.jpg"></div>
+                        <div class="contentBx">
+                            <h3>INFINITE POWERS<br><span>Steven Strogatz</span></h3>
+                        </div>  
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <button style="border: none; color: white; background: transparent;"><a href="infinite powers.html">DESCRIPTION</a></button>
+                        </li>
+                    </ul>
+                </div><br><br>
+                <div>
+                    <h1 style="color: #fff; font-size: 2rem;">Author of<br>the Month     :</h1><br><br>
+                    <div class="imgBx"><img src="cat book.gif" style="width:9vvw; height: 15vh;"></div>
+                </div>
+                 <div class="card" style="width: 60%; padding-left: 50px; align-self: auto;">
+                     <div class="content">
+                         <div class="imgBx" style="align-self: left;"><img src="https://pbs.twimg.com/profile_images/633300399231922177/qPxdwkbo_400x400.jpg"></div>
+                         <div class="contentBx">
+                             <h3>ADNAN CONTRACTOR<br><span>Author of Banana Physics</span></h3>
+                         </div>  
+                     </div>
+                     <ul class="sci">
+                         <li style="--i:1">
+                             <button style="border: none; color: white; background: transparent;"><a href="banana physics.html">DESCRIPTION</a></button>
+                         </li>
+                     </ul>
+                 </div>                 
+        </section>
+    </body>
+</html>
