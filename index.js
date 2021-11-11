@@ -1,3 +1,13 @@
+var config = {
+  apiKey: "AIzaSyCBtf0h8UrLLVrk3VIv2d_Kx9SOWSPvWhs",
+  authDomain: "absolutesingularity-ba380.firebaseapp.com",
+  projectId: "absolutesingularity-ba380",
+  storageBucket: "absolutesingularity-ba380.appspot.com",
+  messagingSenderId: "164885287507",
+  appId: "1:164885287507:web:28f5387e69b202cf40aca6",
+  measurementId: "G-MP6EDSS42H"
+};
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
